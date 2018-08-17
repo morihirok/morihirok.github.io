@@ -1,0 +1,2 @@
+webpackJsonp([0x81b8806e4260],{515:function(t,e){t.exports={data:{site:{siteMetadata:{title:"morihirok Blog"}},allMarkdownRemark:{edges:[{node:{excerpt:"TL;DR かなりお手軽に静的サイトを作れる Github Pages とか Netlify とかにホスティングすればサーバレンタル代はかからない 書き慣れた Markdown でブログが書ける Google Analitics…",fields:{slug:"/create-blog-with-gatsbyjs/"},frontmatter:{date:"17 August, 2018",title:"Gatsby.jsでブログを作成しました"}}}]}},pathContext:{}}}});
+//# sourceMappingURL=path---index-2aff85a84d712181e58d.js.map
