@@ -1,4 +1,46 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[morihirok Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbyjs.github.io/gatsby-starter-blog/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 18 Aug 2018 09:47:23 GMT</lastBuildDate><item><title><![CDATA[Gatsby.jsでブログを作成しました]]></title><description><![CDATA[TL;DR かなりお手軽に静的サイトを作れる Github Pages とか Netlify とかにホスティングすればサーバレンタル代はかからない 書き慣れた Markdown でブログが書ける Google Analitics…]]></description><link>https://gatsbyjs.github.io/gatsby-starter-blog//create-blog-with-gatsbyjs/</link><guid isPermaLink="false">https://gatsbyjs.github.io/gatsby-starter-blog//create-blog-with-gatsbyjs/</guid><pubDate>Fri, 17 Aug 2018 22:40:32 GMT</pubDate><content:encoded>&lt;h1&gt;TL;DR&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[morihirok Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbyjs.github.io/gatsby-starter-blog/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 19 Aug 2018 14:37:02 GMT</lastBuildDate><item><title><![CDATA[Gatsby Starter Blogで作成したブログのフォーマットをいじってみました]]></title><description><![CDATA[Typography.js をいじる Gatsby Starter Blog はデザインを Typography.js…]]></description><link>https://gatsbyjs.github.io/gatsby-starter-blog//edit-blog-format/</link><guid isPermaLink="false">https://gatsbyjs.github.io/gatsby-starter-blog//edit-blog-format/</guid><pubDate>Sun, 19 Aug 2018 16:40:32 GMT</pubDate><content:encoded>&lt;h1&gt;Typography.js をいじる&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/gatsbyjs/gatsby-starter-blog&quot;&gt;Gatsby Starter Blog&lt;/a&gt;はデザインを&lt;a href=&quot;https://kyleamathews.github.io/typography.js/&quot;&gt;Typography.js&lt;/a&gt;にて管理しています。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;gatsby new&lt;/code&gt; したタイミングで &lt;code class=&quot;language-text&quot;&gt;src/utils/typography.js&lt;/code&gt; が生成され、それを読み込む設定になっているので、ここをいじってお望みのブログデザインを手に入れて行きます。&lt;/p&gt;
+&lt;h2&gt;インラインコードを見やすくする&lt;/h2&gt;
+&lt;p&gt;Typography.js にはプラグイン機能があり、インラインコードのバックグラウンドカラーを変えてくれるプラグインがすでに存在しています。&lt;/p&gt;
+&lt;p&gt;今回は Gatsby Starter Blog のデフォルトテーマである&lt;code class=&quot;language-text&quot;&gt;typography-theme-wordpress-2016&lt;/code&gt;にプラグインを追加します。&lt;/p&gt;
+&lt;p&gt;まずは &lt;code class=&quot;language-text&quot;&gt;npm install --save typography-plugin-code&lt;/code&gt; して該当のプラグインを落とします。&lt;/p&gt;
+&lt;p&gt;あとは以下のコード例のようにプラグインを追加します。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;import Typography from &amp;#39;typography&amp;#39;
+import CodePlugin from &amp;#39;typography-plugin-code&amp;#39;
+import Wordpress2016 from &amp;#39;typography-theme-wordpress-2016&amp;#39;
+
+// (中略)
+
+// プラグイン追加
+Wordpress2016.plugins = [new CodePlugin()]&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;これで上記のようにインラインコードが見やすくなりました。&lt;/p&gt;
+&lt;h2&gt;フォントを変更する&lt;/h2&gt;
+&lt;p&gt;Typography.js は JavaScript のオブジェクト形式でコンフィグを指定することができます。
+&lt;code class=&quot;language-text&quot;&gt;typography-theme-wordpress-2016&lt;/code&gt;もコンフィグ済みの JavaScript オブジェクトということになります。&lt;/p&gt;
+&lt;p&gt;今回は日本語フォントに若干の違和感を感じたので以下のように修正しました。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;import Wordpress2016 from &amp;#39;typography-theme-wordpress-2016&amp;#39;
+
+// (中略)
+
+// ヘッダのフォントファミリー
+Wordpress2016.headerFontFamily = [
+  &amp;#39;Merriweather&amp;#39;,
+  &amp;#39;Georgia&amp;#39;,
+  &amp;#39;YuGothic&amp;#39;,
+  &amp;#39;sans-serif&amp;#39;,
+]
+
+// 本文のフォントファミリー
+Wordpress2016.bodyFontFamily = [
+  &amp;#39;YuGothic&amp;#39;,
+  &amp;#39;sans-serif&amp;#39;
+]&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h1&gt;&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[Gatsby.jsでブログを作成しました]]></title><description><![CDATA[TL;DR かなりお手軽に静的サイトを作れる Github Pages とか Netlify とかにホスティングすればサーバレンタル代はかからない 書き慣れた Markdown でブログが書ける Google Analitics…]]></description><link>https://gatsbyjs.github.io/gatsby-starter-blog//create-blog-with-gatsbyjs/</link><guid isPermaLink="false">https://gatsbyjs.github.io/gatsby-starter-blog//create-blog-with-gatsbyjs/</guid><pubDate>Fri, 17 Aug 2018 22:40:32 GMT</pubDate><content:encoded>&lt;h1&gt;TL;DR&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;かなりお手軽に静的サイトを作れる&lt;/li&gt;
 &lt;li&gt;Github Pages とか Netlify とかにホスティングすればサーバレンタル代はかからない&lt;/li&gt;
@@ -12,27 +54,27 @@
 &lt;h2&gt;インストール &amp;#x26; セットアップ&lt;/h2&gt;
 &lt;p&gt;まずは CLI ツールをインストールします。&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm install -g gatsby-cli&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;npm install -g gatsby-cli&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;gatsby new&lt;/code&gt; でプロジェクトを作成します。&lt;/p&gt;
 &lt;p&gt;このとき、公式でたくさんのスターターが用意されているので好きなのを選びます。&lt;/p&gt;
 &lt;p&gt;(今回は&lt;code class=&quot;language-text&quot;&gt;gatsby-starter-blog&lt;/code&gt;を選びました。デザインがそのまんまなのが見て取れると思います。)&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;gatsby new morihirok.github.io gatsby-starter-blog&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;gatsby new morihirok.github.io gatsby-starter-blog&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;あとは&lt;code class=&quot;language-text&quot;&gt;cd morihirok.github.io&lt;/code&gt;したのち、&lt;code class=&quot;language-text&quot;&gt;npm run develop&lt;/code&gt;すると&lt;code class=&quot;language-text&quot;&gt;localhost:8080&lt;/code&gt;で作成したサイトが確認できます。お手軽！&lt;/p&gt;
 &lt;h2&gt;Github Pages にデプロイする&lt;/h2&gt;
 &lt;p&gt;これも&lt;a href=&quot;https://github.com/tschaub/gh-pages&quot;&gt;gh-pages&lt;/a&gt;というライブラリに乗っかれば簡単にできるようになります。&lt;/p&gt;
 &lt;p&gt;私は &lt;code class=&quot;language-text&quot;&gt;git remote&lt;/code&gt; でデプロイ先のリポジトリを指定して、package.json の scripts に&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;quot;deploy&amp;quot;: &amp;quot;gatsby build &amp;amp;&amp;amp; gh-pages -d public -b master&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&amp;quot;deploy&amp;quot;: &amp;quot;gatsby build &amp;amp;&amp;amp; gh-pages -d public -b master&amp;quot;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;と書いています。これで&lt;code class=&quot;language-text&quot;&gt;npm run deploy&lt;/code&gt;とすればデプロイ完了です。お手軽！&lt;/p&gt;
 &lt;h2&gt;Google Analytics を導入する&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-google-analytics&quot;&gt;gatsby-plugin-google-analytics&lt;/a&gt;というプラグインがあるので一瞬で導入できます。&lt;/p&gt;
 &lt;p&gt;プロジェクトのルートディレクトリに&lt;code class=&quot;language-text&quot;&gt;gatsby-config.js&lt;/code&gt;というファイルがあり、以下のようなコンフィグがあります。&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;`gatsby-plugin-sharp`,
+      &lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;`gatsby-plugin-sharp`,
 {
     resolve: `gatsby-plugin-google-analytics`,
     options: {
